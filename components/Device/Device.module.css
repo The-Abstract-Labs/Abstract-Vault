@@ -1,0 +1,10 @@
+.Device {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(137.39deg, #21c9b8 0%, #fe8e4b 96.17%);
+  border-radius: 8px;
+  margin: 0px 5px;
+}

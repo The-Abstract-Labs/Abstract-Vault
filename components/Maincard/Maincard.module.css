@@ -1,0 +1,97 @@
+.mainCard {
+  border-radius: 10px;
+  background: linear-gradient(
+    137.6deg,
+    #5f57f0 2.6%,
+    rgba(147, 116, 201, 0.66381) 55.7%,
+    rgba(250, 174, 123, 0) 88.08%
+  );
+  width: 95%;
+  height: 306px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: auto;
+}
+.balance {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  height: 25%;
+  width: 100%;
+  padding: 15px;
+  background-color: white;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.balanceTitle {
+  font-size: small;
+  color: #919191;
+}
+.balanceAmount {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.mainbalance {
+  position: relative;
+  top: 20px;
+  margin: auto;
+  /* left: 30px; */
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 36px;
+  font-weight: 400;
+  width: 180px;
+}
+.graphimg {
+  height: 80px;
+  position: relative;
+  top: 80px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.netgrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  right: -80px;
+  bottom: -40px;
+  font-size: 10px;
+  font-weight: 300;
+}
+.upgrowlogo {
+  height: 0.8em;
+  margin-right: 5px;
+}
+.netreturn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.ethimg {
+  height: 1em;
+}
+
+.sendButton {
+  color: white;
+  background: #1765fa;
+  border-radius: 4px;
+  width: fit-content;
+  padding: 4px 28px;
+  font-weight: 400;
+  font-size: 12px;
+  text-align: center;
+}
