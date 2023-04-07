@@ -1,0 +1,13 @@
+.scanner {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  height: 5em;
+  width: 5em;
+  border-radius: 50%;
+  background-color: #1765fa;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

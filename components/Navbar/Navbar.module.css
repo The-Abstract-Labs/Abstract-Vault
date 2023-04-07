@@ -1,0 +1,51 @@
+.navbar {
+  margin-top: 37px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  padding: 0em 0.7em;
+  padding-bottom: 8px;
+}
+.logo {
+  height: 2.4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.walletDetails {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.swapLogo {
+  height: 1.2em;
+  margin-right: 15px;
+}
+.bellLogo {
+  height: 1.3em;
+  margin-right: 15px;
+}
+.randImg {
+  height: 1.5em;
+  margin-right: 5px;
+}
+.walletArrowLogo {
+  height: 0.5em;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.walletAccount {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: white;
+  border-radius: 2em;
+  justify-content: space-evenly;
+  color: black;
+  padding: 0.3em;
+}
+.address {
+  margin: 0px !important;
+}
