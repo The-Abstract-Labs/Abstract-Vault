@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Maincard from "../components/Maincard";
 import Scanner from "../components/Scanner";
 import Device from "../components/Device";
+import ApprovalModal from "../components/ApprovalModal";
 
 export default function Home() {
   return (
@@ -31,6 +32,7 @@ export default function Home() {
         </div>
       </div>
       <Scanner />
+      {/* <ApprovalModal /> */}
     </div>
   );
 }
