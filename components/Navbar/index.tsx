@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./Navbar.module.css";
+import { AccountManagerContext } from "../../contexts/AccountManager";
 
 const Navbar = () => {
+  const { accounts } = useContext(AccountManagerContext);
+
   return (
     <nav className={styles.navbar}>
       <div>
@@ -13,7 +16,7 @@ const Navbar = () => {
         <img src="./bell.svg" alt="" className={styles.bellLogo} />
         <div className={styles.walletAccount}>
           <img src="./randimg.png" alt="" className={styles.randImg} />
-          <p className={styles.address}>0x20...e1aC</p>
+          <p className={styles.address}>{accounts[0].slice(0,7)}...</p>
           <img
             src="./walletArrow.svg"
             alt=""
