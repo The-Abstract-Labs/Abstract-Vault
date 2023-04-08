@@ -1,0 +1,16 @@
+.navbar {
+  margin-top: 37px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 0.7em;
+  padding-bottom: 8px;
+  background: #2d2d2d;
+}
+.logo {
+  height: 2.4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

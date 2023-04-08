@@ -1,0 +1,50 @@
+.landingsvg {
+  height: 22em;
+}
+.startwallet {
+  background: #19a6f5;
+  border-radius: 8px;
+  position: absolute;
+  bottom: 10px;
+  margin: auto;
+  padding: 10px 15px;
+  width: 90%;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 39px;
+  text-align: center;
+}
+.safety {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.securelogo {
+  height: 2em;
+}
+
+.securetext {
+  font-size: 13px;
+  margin-left: 10px !important;
+}
+
+.password {
+  border-radius: 8px;
+  background-color: black;
+  font-size: 16px;
+  padding: 10px 5px;
+  color: white;
+  border: 1px solid #19a6f5;
+}
+
+.createPass {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  width: 75%;
+}

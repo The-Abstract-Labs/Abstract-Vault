@@ -1,0 +1,16 @@
+.loadergif {
+  height: 22em;
+}
+.crycoingif {
+  height: 12em;
+}
+.support {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.supporttext {
+  position: relative;
+  bottom: 50px;
+}
