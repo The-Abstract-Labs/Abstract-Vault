@@ -2,6 +2,7 @@ import Client from "@walletconnect/web3wallet";
 import { createContext, useEffect, useState, useContext } from "react";
 import web3walletPromise from "../../lib/web3wallet";
 import { ApprovalSystemContext, ApprovalModalType } from "../ApprovalSystem";
+import { Loader } from "../../components/Loader";
 
 export const Web3WalletContext = createContext<Client | undefined>(undefined);
 
@@ -26,7 +27,7 @@ export function Web3WalletProvider({ children }: {
 
     return (
         <Web3WalletContext.Provider value={web3Wallet}>
-            {web3Wallet ? children : "Loading...."}
+            {web3Wallet ? children : <Loader />}
         </Web3WalletContext.Provider>
     )
 }

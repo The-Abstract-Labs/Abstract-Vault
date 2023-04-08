@@ -6,7 +6,7 @@ export const AccountManagerContext = createContext<any>(null);
 
 export type AccountsDataType = {
     accounts: string[];
-    eoa: string;
+    eoa: string | null;
     loaded: boolean;
     password?: string;
 }
@@ -15,20 +15,22 @@ const ACCOUNTS_STORAGE_KEY = 'accounts';
 const EOA_STORAGE_KEY = 'eoa';
 
 function updateLocalAccounts(accounts: string[]) {
-    window.localStorage.set(ACCOUNTS_STORAGE_KEY, JSON.stringify(accounts));
+    window.localStorage.setItem(ACCOUNTS_STORAGE_KEY, JSON.stringify(accounts));
 }
 
 function getLocalAccounts(): string[] {
-    const accounts = window.localStorage.get(ACCOUNTS_STORAGE_KEY);
+    const accounts = window.localStorage.getItem(ACCOUNTS_STORAGE_KEY);
+    if ( !accounts ) return [];
+
     return JSON.parse(accounts);
 }
 
 function updateLocalEOA(eoa: string) {
-    window.localStorage.set(EOA_STORAGE_KEY, eoa);
+    window.localStorage.setItem(EOA_STORAGE_KEY, eoa);
 }
 
-function getLocalEOA(): string {
-    return window.localStorage.get(EOA_STORAGE_KEY);
+function getLocalEOA(): string | null {
+    return window.localStorage.getItem(EOA_STORAGE_KEY);
 }
 
 export function AccountManagerProvider({ children }: {
@@ -41,7 +43,7 @@ export function AccountManagerProvider({ children }: {
     });
 
     async function createAccount() {
-        const res = await axios.post('/api/createAccount');
+        const res = await axios.get('/api/createAccount');
         const accounts = [...accountsData.accounts, res.data];
 
         updateLocalAccounts(accounts);
@@ -51,12 +53,13 @@ export function AccountManagerProvider({ children }: {
         }))
     }
 
-    function setupEOA() {
+    function setupEOA(password: string) {
         const privateKey = web3.eth.accounts.create().privateKey;
         updateLocalEOA(privateKey);
         setAccountsData((data) => ({
             ...data,
-            eoa: privateKey
+            eoa: privateKey,
+            password
         }))
     }
 
