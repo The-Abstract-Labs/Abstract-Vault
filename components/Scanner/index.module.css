@@ -1,0 +1,68 @@
+.camera {
+  border-radius: 50%;
+  height: 4em;
+  width: 4em;
+  background-color: #7289d9;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.img {
+  filter: invert(100%);
+  margin: 5px;
+  height: 1.8em;
+}
+
+.scannerWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+}
+
+.uploadResultWrapper {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 2rem .4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.uploadResultWrapper .overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #151819;
+  opacity: .6;
+  z-index: -1;
+}
+
+.uploadResult {
+  width: 100%;
+  color: #707070;
+  text-align: center;
+  padding: 2rem;
+  background-color: #151819;
+}
+
+.button {
+  background-color: #7289d9;
+  color: white;
+  padding: .4rem .6rem;
+  border-radius: 5px;
+  margin-top: 2rem;
+}
