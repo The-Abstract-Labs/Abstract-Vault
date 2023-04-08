@@ -31,6 +31,10 @@ export function ApprovalSystemProvider({ children }: {
 
     let modal = <></>;
     if ( state.type === ApprovalModalType.NONE ) {
+        modal = <></>
+    } else if ( state.type === ApprovalModalType.CONNECTION ) {
+        modal = <></>
+    } else {
         modal = <TransactionModal params={{
             from: '0x12223342',
             to: '0x10022',
@@ -38,10 +42,6 @@ export function ApprovalSystemProvider({ children }: {
             gas: '0xffff',
             gasPrice: '0xffff'
         }} />
-    } else if ( state.type === ApprovalModalType.CONNECTION ) {
-        modal = <></>
-    } else {
-        modal = <></>
     }
 
     return (
