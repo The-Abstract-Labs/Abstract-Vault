@@ -28,3 +28,14 @@ p {
     background: black;
   }
 }
+
+.scan-region-highlight {
+  position: absolute !important;
+  pointer-events: none !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  /* transform: scaleX(-1); */
+  width: 300px !important;
+  height: 300px !important;
+}
