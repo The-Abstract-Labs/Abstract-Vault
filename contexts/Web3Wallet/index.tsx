@@ -10,13 +10,21 @@ export function Web3WalletProvider({ children }: {
     children: any
 }) {
     const [web3Wallet, setWeb3Wallet] = useState<Client>();
-    const displayApprovalModal = useContext(ApprovalSystemContext);
+    const useModal = useContext(ApprovalSystemContext);
 
     if ( web3Wallet ) {
         web3Wallet.on('session_proposal', async proposal => {
-            displayApprovalModal({
-                type: ApprovalModalType.CONNECTION
+            const { id, params } = proposal;
+
+            useModal!({
+                type: ApprovalModalType.CONNECTION,
+                id,
+                proposal: params
             })
+        })
+
+        web3Wallet.on('session_request', async proposal => {
+            
         })
     }
 

@@ -1,7 +1,8 @@
-import { createContext, useReducer } from "react";
-import TransactionModal from "../../components/ApprovalModal/Transaction";
+import { Dispatch, createContext, useReducer } from "react";
+import TransactionModal, { TransactionParameters } from "../../components/ApprovalModal/Transaction";
+import ConnectionModal, { ConnectionParameters } from "../../components/ApprovalModal/Connection";
 
-export const ApprovalSystemContext = createContext<any>(null);
+export const ApprovalSystemContext = createContext<Dispatch<ApprovalModalState> | undefined>(undefined);
 
 export enum ApprovalModalType {
     NONE = 'NONE',
@@ -10,8 +11,8 @@ export enum ApprovalModalType {
 }
 
 export type ApprovalModalState = {
-    type: ApprovalModalType;
-}
+    type: ApprovalModalType.NONE;
+} | TransactionParameters | ConnectionParameters;
 
 function reducer(state: ApprovalModalState, action: ApprovalModalState) {
     if ( state.type === ApprovalModalType.NONE ) {
@@ -33,16 +34,12 @@ export function ApprovalSystemProvider({ children }: {
     if ( state.type === ApprovalModalType.NONE ) {
         modal = <></>
     } else if ( state.type === ApprovalModalType.CONNECTION ) {
-        modal = <></>
-    } else {
-        modal = <TransactionModal params={{
-            from: '0x12223342',
-            to: '0x10022',
-            value: '0xffff',
-            gas: '0xffff',
-            gasPrice: '0xffff'
-        }} />
+        modal = <ConnectionModal params={state} />
+    } else if ( state.type === ApprovalModalType.TRANSACTION ) {
+        modal = <TransactionModal params={state} />
     }
+
+    console.log(state)
 
     return (
         <ApprovalSystemContext.Provider value={ dispatch }>

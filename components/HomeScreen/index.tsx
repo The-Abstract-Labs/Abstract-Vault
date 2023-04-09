@@ -32,7 +32,7 @@ export default function Home() {
         </div>
       </div>
       <Scanner />
-      <ApprovalModal />
+      {/* <ApprovalModal /> */}
     </div>
   );
 }
